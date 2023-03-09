@@ -1,12 +1,14 @@
 import { useState } from "react";
 import "./App.css";
 import Title from "./components/Title";
-const myKey = import.meta.env.KEY_URL;
-const myBase = import.meta.env.BASE_URL;
+const myKey = process.env.REACT_APP_KEY_URL;
+const myBase = process.env.REACT_APP_BASE_URL;
+console.log(myBase);
 const api = {
   key: myKey,
   base: myBase,
 };
+console.log(api);
 
 function App() {
   const [query, setQuery] = useState("");
@@ -17,6 +19,7 @@ function App() {
       fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
         .then((res) => res.json())
         .then((result) => {
+          console.log(result);
           setWeather(result);
           setQuery("");
           console.log(result);
