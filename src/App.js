@@ -3,7 +3,7 @@ import "./App.css";
 import Title from "./components/Title";
 const myKey = process.env.REACT_APP_KEY_URL;
 const myBase = process.env.REACT_APP_BASE_URL;
-console.log(myBase);
+
 const api = {
   key: myKey,
   base: myBase,
